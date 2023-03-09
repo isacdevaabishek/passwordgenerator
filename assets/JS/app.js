@@ -23,6 +23,7 @@ function generate() {
     let arr =   [...Array(26)].map((_, i) => String.fromCharCode(i + (capital ? 65 : 97)))
     let arr1=[...Array(26)].map((_, i) => String.fromCharCode(i + 97))
     let arr2=["1","2","3","4","5","6","7","8","9","0"]
+    let arr3
     console.log(arr);
     for(i=1;i<=isac;i++){
         // for only capital 
@@ -53,16 +54,19 @@ function generate() {
     }  
 //   for number and capital 
     if (numbers == true&&capital == true&&small==false) {
-        const randomIndex = Math.floor(Math.random() * arr2.length);
-        const item = arr2[randomIndex];
+
+        let numcap=arr.concat(arr)
+        const randomIndex = Math.floor(Math.random() * numcap.length);
+        const item = numcap[randomIndex];
      password=item
      output=output+password
      document.getElementById('password__result').value = output;
     }  
 // for number and small 
     if (numbers == true&&small == true&&capital==false) {
-        const randomIndex = Math.floor(Math.random() * arr2.length);
-        const item = arr2[randomIndex];
+        let numsmall=arr1.concat(arr)
+        const randomIndex = Math.floor(Math.random() * numsmall.length);
+        const item = numsmall[randomIndex];
      password=item
      output=output+password
      document.getElementById('password__result').value = output;
