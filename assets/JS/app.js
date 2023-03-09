@@ -19,7 +19,7 @@ function generate() {
    
     let capital = document.getElementById("uppercase").checked
     let small=document.getElementById("lowercase").checked
-    let numbers=document.getElementById("numbers").checked
+    let number=document.getElementById("numbers").checked
     let arr =   [...Array(26)].map((_, i) => String.fromCharCode(i + (capital ? 65 : 97)))
     let arr1=[...Array(26)].map((_, i) => String.fromCharCode(i + 97))
     let arr2=["1","2","3","4","5","6","7","8","9","0"]
@@ -45,7 +45,7 @@ function generate() {
     }  
 
     // for number only 
-    if (numbers == true&&capital==false&&small==false) {
+    if (number == true&&capital==false&&small==false) {
         const randomIndex = Math.floor(Math.random() * arr2.length);
         const item = arr2[randomIndex];
      password=item
@@ -53,9 +53,9 @@ function generate() {
      document.getElementById('password__result').value = output;
     }  
 //   for number and capital 
-    if (numbers == true&&capital == true&&small==false) {
+    if (number == true&&capital == true&&small==false) {
 
-        let numcap=arr.concat(arr)
+        let numcap=arr.concat(number)
         const randomIndex = Math.floor(Math.random() * numcap.length);
         const item = numcap[randomIndex];
      password=item
@@ -63,8 +63,8 @@ function generate() {
      document.getElementById('password__result').value = output;
     }  
 // for number and small 
-    if (numbers == true&&small == true&&capital==false) {
-        let numsmall=arr1.concat(arr)
+    if (number == true&&small == true&&capital==false) {
+        let numsmall=arr1.concat(number)
         const randomIndex = Math.floor(Math.random() * numsmall.length);
         const item = numsmall[randomIndex];
      password=item
@@ -75,7 +75,7 @@ function generate() {
 
     if (small == true&&capital == true&&number==false) {
         let smcap=arr.concat(arr1)
-        console.log(smcap);
+        
         const randomIndex = Math.floor(Math.random() * smcap.length);
         const item = smcap[randomIndex];
      password=item
@@ -85,4 +85,16 @@ function generate() {
 
 }
 
+// if (small == true&&capital == true&&number==true) {
+//     let smcap=arr.concat(arr1)
+//     let snc=smcap.concat(number)
+   
+//     const randomIndex = Math.floor(Math.random() * snc.length);
+//     const item = snc[randomIndex];
+//  password=item
+//  output=output+password
+//  document.getElementById('password__result').value = output;
+// }  
+
 }
+
