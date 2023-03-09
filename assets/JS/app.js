@@ -4,7 +4,7 @@ function charLength() {
 
      charLengths = document.getElementById('length').value;
     document.getElementById('result').innerHTML = charLengths;
-    console.log(charLengths);
+    // console.log(charLengths);
     return charLengths;
    
 
@@ -24,7 +24,7 @@ function generate() {
     let arr1=[...Array(26)].map((_, i) => String.fromCharCode(i + 97))
     let arr2=["1","2","3","4","5","6","7","8","9","0"]
     let arr3
-    console.log(arr);
+    // console.log(arr);
     for(i=1;i<=isac;i++){
         // for only capital 
     if (capital == true&&small==false&&number==false) {
@@ -55,7 +55,8 @@ function generate() {
 //   for number and capital 
     if (number == true&&capital == true&&small==false) {
 
-        let numcap=arr.concat(number)
+        let numcap=arr.concat(arr2)
+        console.log(numcap);
         const randomIndex = Math.floor(Math.random() * numcap.length);
         const item = numcap[randomIndex];
      password=item
@@ -64,7 +65,7 @@ function generate() {
     }  
 // for number and small 
     if (number == true&&small == true&&capital==false) {
-        let numsmall=arr1.concat(number)
+        let numsmall=arr1.concat(arr2)
         const randomIndex = Math.floor(Math.random() * numsmall.length);
         const item = numsmall[randomIndex];
      password=item
