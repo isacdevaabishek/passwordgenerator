@@ -4,6 +4,7 @@ function charLength() {
 
      charLengths = document.getElementById('length').value;
     document.getElementById('result').innerHTML = charLengths;
+
     // console.log(charLengths);
     return charLengths;
    
@@ -25,9 +26,9 @@ function generate() {
     let arr2=["1","2","3","4","5","6","7","8","9","0"]
     let arr3
     // console.log(arr);
-    for(i=1;i<=isac;i++){
+    for(i=1;i<=charLengths;i++){
         // for only capital 
-    if (capital == true&&small==false&&number==false) {
+    if (capital == true && small==false &&number==false) {
         const randomIndex = Math.floor(Math.random() * arr.length);
         const item = arr[randomIndex];
      password=item
@@ -83,19 +84,20 @@ function generate() {
      output=output+password
      document.getElementById('password__result').value = output;
     }  
-
+    if (small == true&&capital == true&&number == true) {
+        let smcaps=arr.concat(arr1)
+        // console.log(smcaps);
+        let snc=smcaps.concat(arr2)
+    //    console.log(snc);
+        const randomIndex = Math.floor(Math.random() * snc.length);
+        const item = snc[randomIndex];
+     password=item
+     output=output+password
+     document.getElementById('password__result').value = output;
+    }  
+    
 }
 
-// if (small == true&&capital == true&&number==true) {
-//     let smcap=arr.concat(arr1)
-//     let snc=smcap.concat(number)
-   
-//     const randomIndex = Math.floor(Math.random() * snc.length);
-//     const item = snc[randomIndex];
-//  password=item
-//  output=output+password
-//  document.getElementById('password__result').value = output;
-// }  
 
 }
 
